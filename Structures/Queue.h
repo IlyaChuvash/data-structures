@@ -28,6 +28,19 @@ public:
 			throw std::out_of_range("Queue is empty");
 		}
 		start++;
+
+		size_t current_size = end - start;
+		if (arr.size() > 16 && current_size < arr.size() / 4) {
+			size_t new_size = std::max(size_t(8), arr.size() / 2);
+			std::vector<T> newArr(new_size);
+			for (size_t i = 0; i < current_size; i++) {
+				newArr[i] = arr[start + i];
+			}
+			arr = std::move(newArr);
+			end = current_size;
+			start = 0;
+		}
+
 		if (start == end) {
 			start = 0;
 			end = 0;
