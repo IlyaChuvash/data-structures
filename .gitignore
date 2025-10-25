@@ -39,3 +39,24 @@
 
 # debug information files
 *.dwo
+
+# Visual Studio cache
+.vs/
+
+# Build folders
+build/
+out/
+CMakeFiles/
+CMakeCache.txt
+
+# IDE config
+*.user
+*.suo
+*.vcxproj*
+*.code-workspace
+
+# OS / editor files
+*.log
+*.tmp
+*.bak
+
